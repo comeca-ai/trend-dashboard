@@ -1,0 +1,50 @@
+{
+  "name": "trend-dashboard",
+  "version": "0.1.0",
+  "description": "Painel de agregação e análise de tendências humanas com insights automáticos",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "db:migrate": "node --loader tsx ./src/db/migrations.ts",
+    "db:seed": "node --loader tsx ./src/db/seed.ts",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "scheduler:test": "tsx src/scheduler/test.ts"
+  },
+  "keywords": [
+    "trends",
+    "dashboard",
+    "analytics",
+    "insights",
+    "llm"
+  ],
+  "author": "comeca-ai",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "typescript": "^5.3.3",
+    "dotenv": "^16.3.1",
+    "pg": "^8.11.3",
+    "redis": "^4.6.11",
+    "axios": "^1.6.2",
+    "node-cron": "^3.0.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0",
+    "simple-statistics": "^7.8.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.5",
+    "@types/node-cron": "^3.0.11",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "tsx": "^4.7.0",
+    "vitest": "^1.0.4"
+  }
+}
